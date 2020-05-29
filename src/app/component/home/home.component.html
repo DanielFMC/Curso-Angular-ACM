@@ -1,0 +1,28 @@
+<button type="button" class="btn btn-outline-danger" id="heros" (click)="getTipo('hero')">Show heros</button>
+<button type="button" class="btn btn-outline-danger" id="villains" (click)="getTipo('villain')">Show villains</button>
+
+<div class="row" *ngIf="role === 'hero' || role === ''">
+    <div class="col-sm card-deck" *ngFor="let item of heros">
+        <div class="card border-secondary mb-3">
+            <img [src]="item.img" class="card-img-top" alt="Image">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.nombre }}</h5>
+                <p class="card-text">{{ item.description }}</p>
+                <a href="#" class="btn btn-danger ">See more</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" *ngIf="role === 'villain'">
+    <div class="col-sm card-deck" *ngFor="let item of villains">
+        <div class="card border-secondary mb-3">
+            <img [src]="item.img" class="card-img-top" alt="Image">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.nombre }}</h5>
+                <p class="card-text">{{ item.description }}</p>
+                <a href="#" class="btn btn-danger">See more</a>
+            </div>
+        </div>
+    </div>
+</div>
